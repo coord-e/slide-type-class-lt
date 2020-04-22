@@ -107,10 +107,10 @@ instance (Eq a, Eq b) => Eq (a, b) where
   ```haskell
   eq (True, 'a') (False, 'b') :: Eq (Bool, Char) => Bool
   ```
-  1. `instance (Eq a, Eq b) => Eq (a, b)` より、
+  1) `instance (Eq a, Eq b) => Eq (a, b)` より、
      `Eq (Bool, Char)` → `Eq Bool, Eq Char`
-  2. `instance Eq Bool` が存在するので解消
-  3. `instance Eq Char` が存在するので解消
+  2) `instance Eq Bool` が存在するので解消
+  3) `instance Eq Char` が存在するので解消
 
 ---
 
@@ -121,22 +121,21 @@ class Eq a => Ord a where
   lt :: a -> a -> Bool
 ```
 
-`Ord a` が `Eq a, Ord a` と同じ意味になる
-
-1. `Ord t` のインスタンス宣言時に `Eq t` でないとエラー
-2. `Eq a, Ord a` と制約があったときに `Ord a` にまとめて
-見た目を綺麗にできる
+- `Ord a` が `Eq a, Ord a` と同じ意味になる
+- `Ord t` のインスタンス宣言時に `Eq t` でないとエラー
+- `Eq a, Ord a` と制約があったときに `Ord a` にまとめて
+  見た目を綺麗にできる
 
 ---
 
 ## はい
 
 - こんな方法でHMに手を加えれば型推論はできる
-  * Jones, Mark P. "Typing haskell in haskell." Haskell workshop. Vol. 7. 1999.
+  - Jones, Mark P. "Typing haskell in haskell." Haskell workshop. Vol. 7. 1999.
 - 実際はHNF（Head-Normal Form）に到達するまで
   繰り返すので、停止するんですか？という話があるが…
-  * 停止するんですか議論はよくわかっとらんスマン
-  * ナントカconditionというのがあります
+  - 停止するんですか議論はよくわかっとらんスマン
+  - ナントカconditionというのがあります
 
 ---
 
@@ -155,15 +154,15 @@ class Eq a => Ord a where
 
 ## 実装の選択
 
-1. 型クラスに必要な実装が入ったオブジェクトを
-   **辞書** と呼ぶことにする
-   * 辞書からメソッドを取り出すことができる
-2. それぞれのインスタンスには実装が入った
-   対応する辞書が存在する
-1. 型制約を伴った名前はそれぞれの型制約の
-   型クラスに対応する**辞書**を受け取ることにする
-3. 型推論の過程で辞書をうまく受け渡すことで
-   実装の選択が行われる
+- 型クラスに必要な実装が入ったオブジェクトを
+  **辞書** と呼ぶことにする
+  - 辞書からメソッドを取り出すことができる
+- それぞれのインスタンスには実装が入った
+  対応する辞書が存在する
+- 型制約を伴った名前はそれぞれの型制約の
+  型クラスに対応する**辞書**を受け取ることにする
+- 型推論の過程で辞書をうまく受け渡すことで
+  実装の選択が行われる
 
 ---
 
@@ -235,9 +234,9 @@ member@eqPair (True, 'a') [] :: (Eq Bool, Eq Char) => Bool
 
 1. `instance (Eq a, Eq b) => Eq (a, b)` より、
    `Eq (Bool, Char)` → `Eq Bool, Eq Char`
-  * `Eq (a, b)` の発生源は `member` なので、
+  - `Eq (a, b)` の発生源は `member` なので、
     `member` に辞書を渡す
-  * ここで `eqPair` は `Eq Bool` と `Eq Char` の
+  - ここで `eqPair` は `Eq Bool` と `Eq Char` の
     実装を必要としていることに注意
 
 ---
@@ -250,7 +249,7 @@ member@(eqPair@eqBool) (True, 'a') [] :: Eq Char => Bool
 ```
 
 2. `instance Eq Bool` が存在するので解消
-  * `Eq Bool` の発生源は `eqPair` なので、
+  - `Eq Bool` の発生源は `eqPair` なので、
     `eqPair` に辞書を渡す
 
 ---
@@ -263,7 +262,7 @@ member@(eqPair@eqBool@eqChar) (True, 'a') [] :: Bool
 ```
 
 3. `instance Eq Char` が存在するので解消
-  * `Eq Char` の発生源は `eqPair` なので、
+  - `Eq Char` の発生源は `eqPair` なので、
     `eqPair` に辞書を渡す
 
 ---
@@ -274,8 +273,8 @@ member@(eqPair@eqBool@eqChar) (True, 'a') [] :: Bool
 
 - 型推論の過程で辞書をうまく受け渡すことで実装できる
 - Dictionary Passingについて...
-  * Demystifying Type Classes - [http://okmij.org/ftp/Computation/typeclass.html](http://okmij.org/ftp/Computation/typeclass.html)
-  * Wadler, Philip, and Stephen Blott. "How to make ad-hoc polymorphism less ad hoc." Proceedings of the 16th ACM SIGPLAN-SIGACT symposium on Principles of programming languages. ACM, 1989.
+  - Demystifying Type Classes - [http://okmij.org/ftp/Computation/typeclass.html](http://okmij.org/ftp/Computation/typeclass.html)
+  - Wadler, Philip, and Stephen Blott. "How to make ad-hoc polymorphism less ad hoc." Proceedings of the 16th ACM SIGPLAN-SIGACT symposium on Principles of programming languages. ACM, 1989.
 
 <!-- textlint-enable terminology -->
 
@@ -307,10 +306,10 @@ instance Functor Maybe where
 
 - Jones, Mark P. "A system of constructor classes: overloading and implicit higher-order polymorphism." Journal of functional programming 5.1 (1995): 1-35.
 - カインド付け
-  * これはやるだけ
+  - これはやるだけ
 - 変換後のプログラムに型を付けづらいと思っている
-  * Rank2多相が必要なんじゃないかなあ
-  * （別に高階型クラスに限った話ではないが）
+  - Rank2多相が必要なんじゃないかなあ
+  - （別に高階型クラスに限った話ではないが）
 
 ---
 
@@ -356,10 +355,10 @@ void dict = fmap dict (const ())
 ## 展望
 
 - 高階型クラス含め実装したい
-  * 変換先の言語として手軽なものがなくてしんどいよ〜
+  - 変換先の言語として手軽なものがなくてしんどいよ〜
 - CHR（Constraint Handling Rules）との関連に興味ある
-  * Glynn, Kevin, Martin Sulzmann, and Peter J. Stuckey. "Type classes and constraint handling rules." arXiv preprint cs/0006034 (2000).
-  * Alves, Sandra, and Mário Florido. "Type inference using constraint handling rules." Electronic Notes in Theoretical Computer Science 64 (2002): 1-17.
+  - Glynn, Kevin, Martin Sulzmann, and Peter J. Stuckey. "Type classes and constraint handling rules." arXiv preprint cs/0006034 (2000).
+  - Alves, Sandra, and Mário Florido. "Type inference using constraint handling rules." Electronic Notes in Theoretical Computer Science 64 (2002): 1-17.
 
 ---
 
