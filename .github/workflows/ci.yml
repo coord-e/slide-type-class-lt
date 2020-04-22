@@ -1,0 +1,29 @@
+on: [push, pull_request]
+
+name: Lint
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: npm install
+      - run: npm run lint
+  build:
+    name: Build PDF
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '13.x'
+      - run: npm install
+      - run: npm run build:pdf
+      - uses: actions/upload-artifact@v1
+        with:
+          name: slide
+          path: dist/
