@@ -6,8 +6,9 @@
   "scripts": {
     "lint": "textlint *.md",
     "lint:fix": "textlint --fix *.md",
-    "build": "marp main.md -o dist/slide.html",
-    "build:pdf": "marp main.md -o dist/slide.pdf"
+    "build": "marp main.md -o dist/index.html",
+    "build:pdf": "marp main.md -o dist/slide.pdf",
+    "build:all": "npm run build && npm run build:pdf"
   },
   "repository": {
     "type": "git",
