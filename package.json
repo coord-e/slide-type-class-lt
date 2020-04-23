@@ -1,7 +1,7 @@
 {
   "name": "slide-type-class-lt",
   "version": "1.0.0",
-  "description": "coinsLT#111",
+  "description": "『Haskellの型クラス』@ coinsLT#111",
   "main": "index.js",
   "scripts": {
     "lint": "textlint src/**/*.md",

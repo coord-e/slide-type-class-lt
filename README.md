@@ -1,4 +1,4 @@
-# 型クラス
+# Haskellの型クラス
 
 <!-- textlint-disable no-dead-link -->
 

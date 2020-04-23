@@ -19,7 +19,7 @@ style: |
 
 <!-- _class: invert lead -->
 
-# 型クラス
+# Haskellの型クラス
 
 @coord_e
 
