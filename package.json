@@ -7,7 +7,7 @@
     "lint": "textlint src/**/*.md",
     "lint:fix": "textlint --fix src/**/*.md",
     "build": "marp src/main.md -o dist/index.html",
-    "build:pdf": "marp src/main.md -o dist/slide.pdf",
+    "build:pdf": "marp src/main.md -o dist/slide.pdf --allow-local-files",
     "build:all": "npm run build && npm run build:pdf"
   },
   "repository": {
