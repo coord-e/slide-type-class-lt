@@ -16,7 +16,7 @@ style: |
     background-image: url('./assets/background_lead.png');
     background-size: cover;
   }
-  section.no-footer > footer, section.invert > footer {
+  section.no-footer > footer, section.invert > footer, section.lead::after {
     display: none;
   }
 ---
