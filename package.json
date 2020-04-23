@@ -4,10 +4,10 @@
   "description": "coinsLT#111",
   "main": "index.js",
   "scripts": {
-    "lint": "textlint *.md",
-    "lint:fix": "textlint --fix *.md",
-    "build": "marp main.md -o dist/index.html",
-    "build:pdf": "marp main.md -o dist/slide.pdf",
+    "lint": "textlint src/**/*.md",
+    "lint:fix": "textlint --fix src/**/*.md",
+    "build": "marp src/main.md -o dist/index.html",
+    "build:pdf": "marp src/main.md -o dist/slide.pdf",
     "build:all": "npm run build && npm run build:pdf"
   },
   "repository": {
