@@ -2,6 +2,7 @@
 marp: true
 theme: uncover
 paginate: true
+footer: 『Haskellの型クラス』 @coord_e
 style: |
   section {
     background-image: url('./assets/background_light.png');
@@ -14,6 +15,9 @@ style: |
   section.lead {
     background-image: url('./assets/background_lead.png');
     background-size: cover;
+  }
+  section.no-footer > footer, section.invert > footer {
+    display: none;
   }
 ---
 
@@ -44,6 +48,8 @@ style: |
 
 ---
 
+<!-- _class: no-footer -->
+
 ## 例
 
 ```haskell
@@ -62,6 +68,8 @@ member x (h : t) | eq x h    = True
 - ただし、`eq` の実装は型によって異なって良い
 
 ---
+
+<!-- _class: no-footer -->
 
 ## クラスとインスタンス
 
@@ -110,6 +118,8 @@ instance (Eq a, Eq b) => Eq (a, b) where
   `eq` が使われていることに注意
 
 ---
+
+<!-- _class: no-footer -->
 
 ## 実装
 
@@ -164,6 +174,8 @@ class Eq a => Ord a where
 2. **名前がぶら下がっているので名前と実装の分離ができる（アドホック多相）**
 
 ---
+
+<!-- _class: no-footer -->
 
 ## 実装の選択
 
@@ -237,6 +249,8 @@ member (True, 'a') [] :: Eq (Bool, Char) => Bool
 ```
 
 ---
+
+<!-- _class: no-footer -->
 
 ## 使用側の例
 
@@ -326,6 +340,8 @@ instance Functor Maybe where
 
 ---
 
+<!-- _class: no-footer -->
+
 ## 高階型クラスとRank2多相
 
 ```haskell
@@ -364,6 +380,8 @@ void dict = fmap dict (const ())
 - 高階型クラスというのがある
 
 ---
+
+<!-- _class: no-footer -->
 
 ## 展望
 
