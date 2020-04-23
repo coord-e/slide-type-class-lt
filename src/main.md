@@ -2,9 +2,22 @@
 marp: true
 theme: uncover
 paginate: true
+style: |
+  section {
+    background-image: url('./assets/background_light.png');
+    background-size: cover;
+  }
+  section.invert {
+    background-image: url('./assets/background_dark.png');
+    background-size: cover;
+  }
+  section.lead {
+    background-image: url('./assets/background_lead.png');
+    background-size: cover;
+  }
 ---
 
-<!-- _class: invert -->
+<!-- _class: invert lead -->
 
 # 型クラス
 
