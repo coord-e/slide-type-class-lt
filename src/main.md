@@ -418,4 +418,6 @@ void dict = fmap dict (const ())
 
 ## ありがとうございました
 
-@coord_e
+👇スライド👇
+
+[coorde-slide-type-class.netlify.app](https://coorde-slide-type-class.netlify.app)
