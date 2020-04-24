@@ -29,6 +29,20 @@ style: |
 
 ---
 
+<!-- _class: no-footer -->
+
+#### おはようございます！！！[coord_e](https://keybase.io/coorde)です、よろしくどうぞ。
+
+- coins20 AC
+- Twitter
+  - [@coord_e](https://twitter.com/coord_e)
+  - [@coord2e](https://twitter.com/coord2e)
+- プログラミング言語の理論と実装に興味がある
+
+![bg contain right:40%](./assets/coord_e.gif)
+
+---
+
 ## 型…?
 
 ここでは式を分類します（省略）
