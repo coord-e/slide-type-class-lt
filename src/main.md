@@ -341,11 +341,11 @@ member@(eqPair@eqBool@eqChar) (True, 'a') [] :: Bool
 
 <!-- _class: invert -->
 
-## 高階型クラスについて
+## コンストラクタクラスについて
 
 ---
 
-## 高階型クラス
+## コンストラクタクラス
 
 ```haskell
 class Functor f where
@@ -361,21 +361,21 @@ instance Functor Maybe where
 
 ---
 
-## 高階型クラス
+## コンストラクタクラス
 
 - Jones, Mark P. "A system of constructor classes: overloading and implicit higher-order polymorphism." Journal of functional programming 5.1 (1995): 1-35.
 - カインド付け
-  - これはやるだけ
+- 高カインド多相
 - 変換後のプログラムに型を付けづらいと思っている
   - Rank2多相が必要なんじゃないかなあ
-  - *別に高階型クラスに限った話ではないが、
+  - *別にコンストラクタクラスに限った話ではないが、
     問題になりやすい*
 
 ---
 
 <!-- _class: no-footer -->
 
-## 高階型クラスとRank2多相
+### コンストラクタクラスとRank2多相
 
 ```haskell
 class Functor f where
@@ -410,7 +410,7 @@ void dict = fmap dict (const ())
 - 型クラスというのがあって、名前と実装が分離できる
 - HM型推論にチョコっと手を加えることで
   型推論の過程で変換を行い実装できる
-- 高階型クラスというのがある
+- コンストラクタクラスというのがある
 
 ---
 
@@ -418,7 +418,7 @@ void dict = fmap dict (const ())
 
 ## 展望
 
-- 高階型クラス含め実装したい
+- コンストラクタクラス含め実装したい
   - 変換先の言語として手軽なものがなくてしんどいよ〜
 - CHR（Constraint Handling Rules）との関連に興味ある
   - Glynn, Kevin, Martin Sulzmann, and Peter J. Stuckey. "Type classes and constraint handling rules." arXiv preprint cs/0006034 (2000).
