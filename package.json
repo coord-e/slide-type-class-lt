@@ -8,7 +8,7 @@
     "lint:fix": "textlint --fix src/**/*.md",
     "build:html": "marp src/main.md -o dist/index.html && cp -r src/assets dist/assets",
     "build:pdf": "marp src/main.md -o dist/slide.pdf --allow-local-files",
-    "build": "npm run build && npm run build:pdf"
+    "build": "npm run build:html && npm run build:pdf"
   },
   "repository": {
     "type": "git",
