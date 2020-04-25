@@ -89,14 +89,14 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 }
 " data-marpit-pagination="3" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--theme:uncover;
 ;">
-<h3>Haskell…?</h3>
+<h3>Haskellとはなんですか？</h3>
 <p>こういう感じの関数型言語です（省略）</p>
 <ul>
 <li>関数適用: <code>f x</code></li>
 <li>関数定義: <code>f x = e</code></li>
 <li>型アノテーション: <code>x :: t</code></li>
 </ul>
-<h3>型…?</h3>
+<h3>型とはなんですか？</h3>
 <p>ここでは式を分類します（省略）</p>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
@@ -164,10 +164,10 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 <h2>型クラスがやること</h2>
 <ol>
 <li>型を分類することで抽象化</li>
-<li>名前がぶら下がっているので名前と実装の分離ができる</li>
+<li>名前がぶら下がっているので<em>名前と実装の分離</em>ができる</li>
 </ol>
 <ul>
-<li>オーバーロードとも</li>
+<li><strong>オーバーロード</strong>とも</li>
 <li>型クラスと名前、型と実装が紐ついている</li>
 </ul>
 <footer>『Haskellの型クラス』 @coord_e</footer>
@@ -202,7 +202,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 <ul>
 <li><code>Eq a</code> が <code>a</code> の上で <code>eq</code> が使えることを示している</li>
 <li><code>Eq</code> は <code>eq</code> が定義された型の集合とみれる</li>
-<li>ただし、<code>eq</code> の実装は型によって異なって良い</li>
+<li>ただし、<code>eq</code> の実装は<em>型によって異なって良い</em></li>
 </ul>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
@@ -229,10 +229,10 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
   eq :: a -&gt; a -&gt; <span class="hljs-type">Bool</span>
 <span class="hljs-class">
 <span class="hljs-keyword">instance</span> <span class="hljs-type">Eq</span> <span class="hljs-type">Char</span> <span class="hljs-keyword">where</span></span>
-  eq = ...  <span class="hljs-comment">-- プリミティヴな操作...</span>
+  eq = ...  <span class="hljs-comment">-- プリミティヴな操作</span>
 <span class="hljs-class">
 <span class="hljs-keyword">instance</span> <span class="hljs-type">Eq</span> <span class="hljs-type">Int</span> <span class="hljs-keyword">where</span></span>
-  eq = ...  <span class="hljs-comment">-- プリミティヴな操作...</span>
+  eq = ...  <span class="hljs-comment">-- プリミティヴな操作</span>
 <span class="hljs-class">
 <span class="hljs-keyword">instance</span> <span class="hljs-type">Eq</span> <span class="hljs-type">Bool</span> <span class="hljs-keyword">where</span></span>
   eq <span class="hljs-type">True</span>  <span class="hljs-type">True</span>  = <span class="hljs-type">True</span>
@@ -265,7 +265,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 <li>例:<pre><code class="language-haskell"><span class="hljs-title">member</span> 'a' ['b', 'c'] :: <span class="hljs-type">Eq</span> <span class="hljs-type">Char</span> =&gt; <span class="hljs-type">Bool</span>
 </code></pre>
 <ul>
-<li data-marpit-fragment="1"><code>instance Eq Char where ...</code> のインスタンス宣言が存在するので、<code>Eq Char</code>を解消</li>
+<li data-marpit-fragment="1"><code>instance Eq Char</code> のインスタンス宣言が存在するので、<code>Eq Char</code>を解消</li>
 <li data-marpit-fragment="2"><code>Bool</code> に型付け</li>
 </ul>
 </li>
@@ -750,7 +750,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 }
 " class="invert" data-marpit-pagination="26" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--class:invert;--theme:uncover;
 ;">
-<h2>高階型クラスについて</h2>
+<h2>コンストラクタクラスについて</h2>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-footer="『Haskellの型クラス』 @coord_e" data-theme="uncover" data-style="section {
@@ -770,7 +770,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 }
 " data-marpit-pagination="27" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--theme:uncover;
 ;">
-<h2>高階型クラス</h2>
+<h2>コンストラクタクラス</h2>
 <pre><code class="language-haskell"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">Functor</span> f <span class="hljs-keyword">where</span></span>
   fmap :: (a -&gt; b) -&gt; f a -&gt; f b
 <span class="hljs-class">
@@ -783,7 +783,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 </code></pre>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-footer="『Haskellの型クラス』 @coord_e" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-footer="『Haskellの型クラス』 @coord_e" data-class="no-footer" data-theme="uncover" data-style="section {
   background-image: url('./assets/background_light.png');
   background-size: cover;
 }
@@ -798,21 +798,18 @@ section.lead {
 section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
   display: none;
 }
-" data-marpit-pagination="28" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--theme:uncover;
+" class="no-footer" data-marpit-pagination="28" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--class:no-footer;--theme:uncover;
 ;">
-<h2>高階型クラス</h2>
+<h2>コンストラクタクラス</h2>
 <ul>
 <li>Jones, Mark P. &quot;A system of constructor classes: overloading and implicit higher-order polymorphism.&quot; Journal of functional programming 5.1 (1995): 1-35.</li>
-<li>カインド付け
-<ul>
-<li>これはやるだけ</li>
-</ul>
-</li>
+<li>カインド付け</li>
+<li>高カインド多相</li>
 <li>変換後のプログラムに型を付けづらいと思っている
 <ul>
 <li>Rank2多相が必要なんじゃないかなあ</li>
-<li><em>別に高階型クラスに限った話ではないが、<br />
-問題になりやすい</em></li>
+<li><em>別にコンストラクタクラスに限った話ではないが、<br />
+コンストラクタクラスだと問題になりやすい</em></li>
 </ul>
 </li>
 </ul>
@@ -835,7 +832,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 }
 " class="no-footer" data-marpit-pagination="29" data-marpit-pagination-total="33" style="--paginate:true;--footer:『Haskellの型クラス』 @coord_e;--class:no-footer;--theme:uncover;
 ;">
-<h2>高階型クラスとRank2多相</h2>
+<h3>コンストラクタクラスとRank2多相</h3>
 <pre><code class="language-haskell"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">Functor</span> f <span class="hljs-keyword">where</span></span>
   fmap :: (a -&gt; b) -&gt; f a -&gt; f b
 
@@ -895,7 +892,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 <li>型クラスというのがあって、名前と実装が分離できる</li>
 <li>HM型推論にチョコっと手を加えることで<br />
 型推論の過程で変換を行い実装できる</li>
-<li>高階型クラスというのがある</li>
+<li>コンストラクタクラスというのがある</li>
 </ul>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
@@ -918,7 +915,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 ;">
 <h2>展望</h2>
 <ul>
-<li>高階型クラス含め実装したい
+<li>コンストラクタクラス含め実装したい
 <ul>
 <li>変換先の言語として手軽なものがなくてしんどいよ〜</li>
 </ul>
@@ -951,7 +948,7 @@ section.no-footer &gt; footer, section.invert &gt; footer, section.lead::after {
 ;">
 <h2>ありがとうございました</h2>
 <p><img class="emoji" draggable="false" alt="👇" src="https://twemoji.maxcdn.com/2/svg/1f447.svg" data-marp-twemoji=""/>スライド<img class="emoji" draggable="false" alt="👇" src="https://twemoji.maxcdn.com/2/svg/1f447.svg" data-marp-twemoji=""/></p>
-<p><a href="https://coorde-slide-type-class.netlify.app">coorde-slide-type-class.netlify.app</a></p>
+<p><a href="https://coord-e.github.io/slide-type-class-lt/">coord-e.github.io/slide-type-class-lt</a></p>
 <footer>『Haskellの型クラス』 @coord_e</footer>
 </section>
 <script>!function(){"use strict";function t(t){Array.from(document.getElementsByTagName("svg"),e=>{if(e.hasAttribute("data-marpit-svg")){const{clientHeight:r,clientWidth:a}=e;e.style.transform||(e.style.transform="translateZ(0)");const o=t||e.currentScale||1,i=e.viewBox.baseVal.width/o,n=e.viewBox.baseVal.height/o,s=Math.min(r/n,a/i);Array.from(e.querySelectorAll(":scope > foreignObject"),t=>{const e=t.x.baseVal.value,o=t.y.baseVal.value;Array.from(t.querySelectorAll(":scope > section"),t=>{t.style.transformOrigin||(t.style.transformOrigin="0 0");const l=(a-s*i)/2-e,c=(r-s*n)/2-o;t.style.transform=`translate3d(${l}px,${c}px,0) scale(${s}) translate(${e}px,${o}px)`})})}})}const e=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function r(a=!0){for(const e of"Apple Computer, Inc."===navigator.vendor?[t]:[])e();Array.from(document.querySelectorAll('svg[data-marp-fitting="svg"]'),t=>{const r=t.firstChild,a=r.firstChild,{scrollWidth:o,scrollHeight:i}=a;let n,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(n=t.parentElement.parentElement),t.hasAttribute("data-marp-fitting-math")&&(n=t.parentElement),n){const t=getComputedStyle(n),e=Math.ceil(n.clientWidth-parseFloat(t.paddingLeft)-parseFloat(t.paddingRight));e&&(s=e)}const l=Math.max(o,s),c=Math.max(i,1),p=`0 0 ${l} ${c}`;e(r,"width",""+l),e(r,"height",""+c),e(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),e(t,"viewBox",p)&&t.classList.toggle("__reflow__")}),a&&window.requestAnimationFrame(()=>r(a))}!function(){if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");window.marpCoreBrowserScript?console.warn("Marp Core's browser script has already executed."):(Object.defineProperty(window,"marpCoreBrowserScript",{value:!0}),r())}()}();
