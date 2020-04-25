@@ -43,7 +43,7 @@ style: |
 
 ---
 
-### Haskell…?
+### Haskellとはなんですか？
 
 こういう感じの関数型言語です（省略）
 
@@ -51,7 +51,7 @@ style: |
 - 関数定義: `f x = e`
 - 型アノテーション: `x :: t`
 
-### 型…?
+### 型とはなんですか？
 
 ここでは式を分類します（省略）
 
@@ -73,8 +73,8 @@ style: |
 ## 型クラスがやること
 
 1. 型を分類することで抽象化
-2. 名前がぶら下がっているので名前と実装の分離ができる
-  - オーバーロードとも
+2. 名前がぶら下がっているので*名前と実装の分離*ができる
+  - **オーバーロード**とも
   - 型クラスと名前、型と実装が紐ついている
 
 ---
@@ -96,7 +96,7 @@ member x (h : t) | eq x h    = True
 
 - `Eq a` が `a` の上で `eq` が使えることを示している
 - `Eq` は `eq` が定義された型の集合とみれる
-- ただし、`eq` の実装は型によって異なって良い
+- ただし、`eq` の実装は*型によって異なって良い*
 
 ---
 
@@ -111,10 +111,10 @@ class Eq a where
   eq :: a -> a -> Bool
 
 instance Eq Char where
-  eq = ...  -- プリミティヴな操作...
+  eq = ...  -- プリミティヴな操作
 
 instance Eq Int where
-  eq = ...  -- プリミティヴな操作...
+  eq = ...  -- プリミティヴな操作
 
 instance Eq Bool where
   eq True  True  = True
@@ -132,7 +132,7 @@ instance Eq Bool where
   ```haskell
   member 'a' ['b', 'c'] :: Eq Char => Bool
   ```
-  * `instance Eq Char where ...` のインスタンス宣言が存在するので、`Eq Char`を解消
+  * `instance Eq Char` のインスタンス宣言が存在するので、`Eq Char`を解消
   * `Bool` に型付け
 
 ---
@@ -361,6 +361,8 @@ instance Functor Maybe where
 
 ---
 
+<!-- _class: no-footer -->
+
 ## コンストラクタクラス
 
 - Jones, Mark P. "A system of constructor classes: overloading and implicit higher-order polymorphism." Journal of functional programming 5.1 (1995): 1-35.
@@ -369,7 +371,7 @@ instance Functor Maybe where
 - 変換後のプログラムに型を付けづらいと思っている
   - Rank2多相が必要なんじゃないかなあ
   - *別にコンストラクタクラスに限った話ではないが、
-    問題になりやすい*
+    コンストラクタクラスだと問題になりやすい*
 
 ---
 
