@@ -2,8 +2,7 @@
 
 <!-- textlint-disable no-dead-link -->
 
-[![Lint](https://github.com/coord-e/slide-type-class-lt/workflows/Lint/badge.svg)](https://github.com/coord-e/slide-type-class-lt/actions?query=workflow%3ALint)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/f993f682-be6c-45ac-a126-7c62fe0392a7/deploy-status)](https://app.netlify.com/sites/coorde-slide-type-class/deploys)
+[![Lint and Deploy](https://github.com/coord-e/slide-type-class-lt/workflows/Lint%20and%20Deploy/badge.svg)](https://github.com/coord-e/slide-type-class-lt/actions?workflow=Lint+and+Deploy)
 
 <!-- textlint-enable no-dead-link -->
 

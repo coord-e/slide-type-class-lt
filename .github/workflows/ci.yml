@@ -1,6 +1,6 @@
 on: [push, pull_request]
 
-name: Lint
+name: Lint and Deploy
 
 jobs:
   lint:
@@ -13,8 +13,8 @@ jobs:
           node-version: '13.x'
       - run: npm install
       - run: npm run lint
-  build:
-    name: Build PDF
+  deploy:
+    name: Deploy
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@master
@@ -22,8 +22,8 @@ jobs:
         with:
           node-version: '13.x'
       - run: npm install
-      - run: npm run build:pdf
-      - uses: actions/upload-artifact@v1
+      - run: npm run build
+      - uses: peaceiris/actions-gh-pages@v3
         with:
-          name: slide
-          path: dist/
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
